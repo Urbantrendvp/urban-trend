@@ -1,0 +1,50 @@
+let prodotti = [];
+
+fetch('prodotti.json')
+.then(res => res.json())
+.then(data => {
+prodotti = data;
+mostraProdotti(prodotti);
+});
+
+function mostraProdotti(lista){
+
+const catalogo = document.getElementById('catalogo');
+
+catalogo.innerHTML = '';
+
+lista.forEach(prodotto => {
+
+catalogo.innerHTML += `
+<div class="card">
+
+<img src="${prodotto.immagine}" alt="${prodotto.nome}">
+
+<div class="info">
+
+<div class="nome">${prodotto.nome}</div>
+
+<div>${prodotto.categoria}</div>
+
+<div>${prodotto.taglia}</div>
+
+<div class="prezzo">€ ${prodotto.prezzo}</div>
+
+</div>
+
+</div>
+`;
+});
+}
+
+document.getElementById('search').addEventListener('keyup', e=>{
+
+const testo = e.target.value.toLowerCase();
+
+const filtrati = prodotti.filter(p =>
+p.nome.toLowerCase().includes(testo)
+);
+
+mostraProdotti(filtrati);
+
+});
