@@ -1,0 +1,17 @@
+[
+  {
+    "nome":"Felpa Urban Black",
+    "prezzo":"39.90",
+    "categoria":"Uomo",
+    "taglia":"S-M-L-XL",
+    "immagine":"images/felpa1.jpg"
+  },
+
+  {
+    "nome":"T-Shirt Urban Blue",
+    "prezzo":"24.90",
+    "categoria":"Donna",
+    "taglia":"S-M-L",
+    "immagine":"images/shirt1.jpg"
+  }
+]
